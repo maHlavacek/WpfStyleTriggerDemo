@@ -24,5 +24,19 @@ namespace WpfStyleTriggerDemo
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(e.OriginalSource is Button btn)
+            {
+                if (btn.Content.ToString().Equals("speichern", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    string fullName = $"{tbLastName.Text} {tbFirstName.Text}";
+                    lbList.Items.Add(fullName);
+                }
+                tbFirstName.Text = string.Empty;
+                tbLastName.Text = string.Empty;
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfStyleTriggerDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -13,21 +13,22 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="100"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition MinHeight="50"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label>Vorname</Label>
-            <TextBox Margin="10"></TextBox>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label>Nachname</Label>
-            <TextBox Margin="10"></TextBox>
-        </StackPanel>
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="48" FontWeight="Bold">Mitarbeiter anlegen</Label>
-        <Button Grid.Row="5" Grid.Column="0" Margin="5" IsDefault="true">Speichern</Button>
-        <Button Grid.Row="5" Grid.Column="1" Margin="5">Abbrechen</Button>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label>Vorname</Label>
+            <TextBox Margin="10" x:Name="tbFirstName"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <Label>Nachname</Label>
+            <TextBox Margin="10" x:Name="tbLastName"></TextBox>
+        </StackPanel>
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lbList"></ListBox>
+        <Button Grid.Row="4" Grid.Column="0" Margin="5" IsDefault="true" Click="Button_Click">Speichern</Button>
+        <Button Grid.Row="4" Grid.Column="1" Margin="5">Abbrechen</Button>
     </Grid>
 </Window>
