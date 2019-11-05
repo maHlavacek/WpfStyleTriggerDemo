@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:WpfStyleTriggerDemo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="GotFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation To="20" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                            <ColorAnimation To="Blue" Duration="0:0:0.5" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="LostFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation To="12" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                            <ColorAnimation To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>
